@@ -30,6 +30,7 @@ const routes = [
     path: '/gallery',
     name: 'Gallery',
     component: Gallery,
+    props: true,
   },
 ];
 

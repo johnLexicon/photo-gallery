@@ -1,6 +1,6 @@
 <template>
-  <div class="album-card">
-    <h3>{{ album.title }}</h3>
+  <div class="album-card" @click="handleClick">
+    <h3>{{ album.title }} (id: {{ album.id }})</h3>
   </div>
 </template>
 
@@ -9,7 +9,12 @@ export default {
   name: "AlbumCard",
   props: ["album"],
   methods: {
-    handleMouseover() {},
+    handleClick() {
+      this.$router.push({
+        name: "Gallery",
+        params: { albumId: this.album.id, albumTitle: this.album.title },
+      });
+    },
   },
 };
 </script>
