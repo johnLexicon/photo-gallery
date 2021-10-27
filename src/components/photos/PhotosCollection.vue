@@ -1,64 +1,32 @@
 <template>
-  <div class="collection-wrapper">
-    <Photo
-      class="photo-wrapper"
-      :key="index"
-      v-for="(bgImg, index) in bgImgs"
-      :backgroundImg="bgImg"
-    />
+  <div>
+    <div v-if="photos.length > 0" class="photos-container">
+      <thumbnail-card v-for="photo in photos" :key="photo.id" :photo="photo" />
+    </div>
+    <h3 v-else>No photos available</h3>
   </div>
 </template>
 
 <script>
-import Photo from "./Photo.vue";
+import ThumbnailCard from "./ThumbnailCard.vue";
 export default {
   name: "PhotosCollection",
+  props: ["photos"],
   components: {
-    Photo,
+    ThumbnailCard,
   },
   data() {
-    return {
-      bgImgs: [
-        {
-          backgroundImage: `url(${require("../../assets/img/thumbs/img1.jpg")})`,
-        },
-        {
-          backgroundImage: `url(${require("../../assets/img/thumbs/img2.jpg")})`,
-        },
-        {
-          backgroundImage: `url(${require("../../assets/img/thumbs/img3.jpg")})`,
-        },
-        {
-          backgroundImage: `url(${require("../../assets/img/thumbs/img4.jpg")})`,
-        },
-        {
-          backgroundImage: `url(${require("../../assets/img/thumbs/img5.jpg")})`,
-        },
-        {
-          backgroundImage: `url(${require("../../assets/img/thumbs/img6.jpg")})`,
-        },
-        {
-          backgroundImage: `url(${require("../../assets/img/thumbs/img7.jpg")})`,
-        },
-      ],
-    };
+    return {};
   },
 };
 </script>
 
 <style>
-.collection-wrapper {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(auto-fill, 358px);
-  gap: 10px;
-}
-.photo-wrapper {
-  width: 100%; /* necessary for the image to be able to expand */
-  height: 300px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  cursor: pointer;
+.photos-container {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
 }
 </style>

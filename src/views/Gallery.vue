@@ -1,20 +1,18 @@
 <template>
-  <div>
-    <h3>Gallery</h3>
-    <PhotosCollection />
-    <!-- <LargePhoto /> -->
+  <div class="gallery-container">
+    <h1>Gallery</h1>
+    <h3 v-if="!photos">Fetching photos</h3>
+    <PhotosCollection v-else :photos="photos" />
   </div>
 </template>
 
 <script>
-import axios from "axios";
+import { fetchPhotos } from "../shared/data";
 import PhotosCollection from "../components/photos/PhotosCollection.vue";
-// import LargePhoto from "../components/photos/LargePhoto.vue";
 export default {
   name: "Gallery",
   components: {
     PhotosCollection,
-    // LargePhoto,
   },
   data() {
     return {
@@ -22,20 +20,19 @@ export default {
     };
   },
   mounted() {
-    axios
-      .get("https://jsonplaceholder.typicode.com/photos")
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    this.getPhotos("3");
+  },
+  methods: {
+    async getPhotos(albumId) {
+      this.photos = await fetchPhotos(albumId);
+    },
   },
 };
 </script>
 
 <style>
-.gallery-wrapper {
-  width: 80vw;
+.gallery-container {
+  text-align: center;
+  margin-top: 2rem;
 }
 </style>

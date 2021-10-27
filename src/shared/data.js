@@ -11,4 +11,14 @@ const fetchAlbums = async () => {
   }
 };
 
-export { fetchAlbums };
+const fetchPhotos = async (albumId) => {
+  try {
+    const response = await axios.get(`${API}/photos/?albumId=${albumId}`);
+    return response.data;
+  } catch (err) {
+    console.log(err);
+    return [];
+  }
+};
+
+export { fetchAlbums, fetchPhotos };
