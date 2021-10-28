@@ -27,6 +27,7 @@ body {
   text-align: center;
 }
 .app-container {
+  padding-top: 3rem;
   margin-top: 62px;
 }
 </style>
