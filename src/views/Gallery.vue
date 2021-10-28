@@ -1,7 +1,7 @@
 <template>
-  <div class="gallery-container">
-    <h1>{{ albumTitle }} (Album id: {{ albumId }})</h1>
-    <h3 v-if="!photos">Fetching photos</h3>
+  <div>
+    <h1 class="text-center">{{ albumTitle }} (Album id: {{ albumId }})</h1>
+    <h3 class="text-center" v-if="!photos">Fetching photos</h3>
     <PhotosCollection v-else :photos="photos" @showPhoto="showPhoto" />
     <large-photo
       v-if="showOverlay"
@@ -54,8 +54,4 @@ export default {
 </script>
 
 <style>
-.gallery-container {
-  text-align: center;
-  margin-top: 2rem;
-}
 </style>

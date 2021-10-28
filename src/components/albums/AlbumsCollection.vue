@@ -23,6 +23,7 @@ export default {
   width: 80vw;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
   margin: auto;
   margin-top: 2rem;

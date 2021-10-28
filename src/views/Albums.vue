@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1>Albums</h1>
-    <h3 v-if="!albums">Fetching albums</h3>
+    <h1 class="text-center">Albums</h1>
+    <h3 class="text-center" v-if="!albums">Fetching albums</h3>
     <albums-collection v-else :albums="albums" />
   </div>
 </template>

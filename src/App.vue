@@ -1,15 +1,18 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/albums">Albums</router-link>
-    </div>
-    <router-view />
+    </div> -->
+    <navbar />
+    <router-view class="app-container" />
   </div>
 </template>
 <script>
+import Navbar from "./components/Navbar.vue";
 export default {
+  components: { Navbar },
   name: "App",
 };
 </script>
@@ -24,5 +27,11 @@ export default {
 html,
 body {
   font-family: "Lato", sans-serif;
+}
+.text-center {
+  text-align: center;
+}
+.app-container {
+  margin-top: 110px;
 }
 </style>
