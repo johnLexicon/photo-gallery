@@ -1,7 +1,12 @@
 <template>
   <div>
     <div v-if="photos.length > 0" class="photos-container">
-      <thumbnail-card v-for="photo in photos" :key="photo.id" :photo="photo" />
+      <thumbnail-card
+        v-for="photo in photos"
+        :key="photo.id"
+        :photo="photo"
+        @showPhoto="showPhoto"
+      />
     </div>
     <h3 v-else>No photos available</h3>
   </div>
@@ -15,8 +20,10 @@ export default {
   components: {
     ThumbnailCard,
   },
-  data() {
-    return {};
+  methods: {
+    showPhoto(photoUrl) {
+      this.$emit("showPhoto", photoUrl);
+    },
   },
 };
 </script>

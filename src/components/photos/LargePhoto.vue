@@ -1,11 +1,19 @@
 <template>
-  <div class="photo-window">
-    <img src="../../assets/img/thumbs/img6.jpg" alt="" />
+  <div class="photo-window" @click.self="handleClick">
+    <img :src="photoUrl" alt="Large photo" ref="largePhotoElem" />
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "LargePhoto",
+  props: ["photoUrl"],
+  methods: {
+    handleClick() {
+      this.$emit("closeOverlay");
+    },
+  },
+};
 </script>
 
 <style>

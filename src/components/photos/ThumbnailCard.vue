@@ -1,5 +1,5 @@
 <template>
-  <div class="thumbnail-card">
+  <div class="thumbnail-card" @click="handleClick">
     <h3 class="card-header">{{ shortTitle }}</h3>
     <figure v-lazyload class="image-wrapper">
       <spinner class="spinner" />
@@ -25,6 +25,11 @@ export default {
       return this.photo.title.slice(0, 7);
     },
   },
+  methods: {
+    handleClick() {
+      this.$emit("showPhoto", this.photo.url);
+    },
+  },
 };
 </script>
 
@@ -37,6 +42,7 @@ export default {
 }
 .thumbnail-card {
   cursor: pointer;
+  background-color: #fefefe;
   flex-basis: 20%;
 }
 .thumbnail-card figure {

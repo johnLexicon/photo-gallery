@@ -43,6 +43,7 @@ export default {
       observer.observe(el); // Attach the element to the observer object.
     }
 
+    // If the Intersection observer class exists.
     if (window['IntersectionObserver']) {
       createObserver();
     } else {
