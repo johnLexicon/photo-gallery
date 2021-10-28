@@ -8,7 +8,7 @@
         @showPhoto="showPhoto"
       />
     </div>
-    <h3 v-else>No photos available</h3>
+    <h3 class="text-center" v-else>No photos available</h3>
   </div>
 </template>
 
