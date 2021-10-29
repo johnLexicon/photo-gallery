@@ -1,12 +1,12 @@
 <template>
   <nav class="navbar">
     <div id="navbarContainer" class="container">
-      <a class="navbar-brand" href="#"
+      <router-link class="navbar-brand" to="/"
         ><img
           height="30"
           src="https://www.lexicon.se/Static/images/logo-lexicon_2x.gif"
           alt="Lexicon logo"
-      /></a>
+      /></router-link>
       <button
         type="button"
         class="navbar-toggler"
