@@ -25,7 +25,6 @@ export default {
   methods: {
     async getAlbums() {
       this.albums = await fetchAlbums();
-      console.log(this.albums);
     },
   },
 };
