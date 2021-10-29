@@ -31,6 +31,7 @@ export default {
 <style>
 .photos-container {
   margin-top: 2rem;
+  padding-bottom: 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
