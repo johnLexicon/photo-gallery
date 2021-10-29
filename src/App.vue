@@ -27,7 +27,23 @@ body {
   text-align: center;
 }
 .app-container {
-  padding-top: 3rem;
   margin-top: 62px;
+  padding-top: 3rem;
+  height: calc(100vh - 62px);
+}
+.falling {
+  position: relative;
+  animation-name: sliding-down;
+  animation-duration: 2.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes sliding-down {
+  0% {
+    top: -150px;
+  }
+  100% {
+    top: 0px;
+  }
 }
 </style>
