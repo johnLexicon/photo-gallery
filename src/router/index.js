@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import Albums from '../views/Albums.vue';
 import Gallery from '../views/Gallery.vue';
+import NotFound from '../views/NotFound.vue';
 
 Vue.use(VueRouter);
 
@@ -18,10 +19,15 @@ const routes = [
     component: Albums,
   },
   {
-    path: '/gallery',
+    path: '/gallery/:albumId',
     name: 'Gallery',
     component: Gallery,
     props: true,
+  },
+  {
+    path: '*',
+    name: 'NotFound',
+    component: NotFound,
   },
 ];
 
